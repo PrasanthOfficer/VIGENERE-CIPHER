@@ -1,10 +1,10 @@
-# VIGENERE-CIPHER
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/403bf5e2-deb5-4d0f-83c2-08f8351be861" /># VIGENERE-CIPHER
 ## EX. NO: 4
  
 
 ## IMPLEMETATION OF VIGENERE CIPHER
- 
-
+## Name : PRASANTH T
+## Reg no : 212224040243
 ## AIM:
 
 To implement the Vigenere Cipher substitution technique using C program.
@@ -30,7 +30,28 @@ STEP-8: Repeat the above steps to generate the entire cipher text.
 
 
 ## PROGRAM
-
+```
+// Online C compiler to run C program online
+#include <stdio.h>
+ #include <string.h>
+ void vigenereCipher(char *text, char *key, int decrypt) {
+ int len = strlen(text), keyLen = strlen(key);
+ for (int i = 0; i < len; i++) {
+ int shift = key[i % keyLen]- 'A';
+ text[i] = 'A' + (text[i]- 'A' + (decrypt ? 26- shift : shift)) % 26;
+ }
+ }
+ int main() {
+ char text[] = "PRASANTH", key[] = "WATER";
+ vigenereCipher(text, key, 0);
+ printf("Encrypted Message: %s\n", text);
+ vigenereCipher(text, key, 1);
+ printf("Decrypted Message: %s\n", text);
+ return 0;
+ }
+```
 ## OUTPUT
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/194165f7-b556-4657-82b2-1233a170bc49" />
 
 ## RESULT
+Thus the implementation of vigenere cipher had been executed successfully.
